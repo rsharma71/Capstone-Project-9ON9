@@ -1,20 +1,20 @@
 import React, { useContext } from "react";
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native'
-
 import { ScoreContext } from '../Context/ScoreContext';
 export default function Buttons() {
-    const { increaseScore } = useContext(ScoreContext);
+    const { increaseScore
+     } = useContext(ScoreContext);
     return (
     <>
-    
+   
  <View style={styles.rows}>
    <View>
     <View style= {styles.align}>
     <TouchableOpacity style= {styles.border1}  onPress={() => increaseScore(3)} >
         <Text style= {styles.row1}>+3</Text>
     </TouchableOpacity>
-    <TouchableOpacity style= {styles.border2}  onPress={() => increaseScore(-3)}>
-        <Text style= {styles.row2}>-3</Text>
+    <TouchableOpacity style= {styles.border2}>
+        <Text style= {styles.row2} onPress={() => increaseScore(-3)}>-3</Text>
     </TouchableOpacity>
     
     </View>
@@ -24,19 +24,19 @@ export default function Buttons() {
     </TouchableOpacity>
     <TouchableOpacity style={styles.border9} onPress={() => increaseScore(9)}>
         
-        <Text style= {styles.row1} >+9</Text>
+        <Text style= {styles.row2} >+9</Text>
         
     </TouchableOpacity>
-    <TouchableOpacity style= {styles.border2}  onPress={() => increaseScore(-2)}>
-        <Text style= {styles.row2}>-2</Text>
+    <TouchableOpacity style= {styles.border2}>
+        <Text style= {styles.row2} onPress={() => increaseScore(-2)}>-2</Text>
     </TouchableOpacity>
     </View>
     <View style= {styles.align}>
     <TouchableOpacity style= {styles.border1}  onPress={() => increaseScore(1)}>
         <Text style= {styles.row1}>+1</Text>
     </TouchableOpacity>
-    <TouchableOpacity style= {styles.border2}  onPress={() => increaseScore(-1)}>
-        <Text style= {styles.row2}>-1</Text>
+    <TouchableOpacity style= {styles.border2}>
+        <Text style= {styles.row2} onPress={() => increaseScore(-1)}>-1</Text>
     </TouchableOpacity>
     
     </View>
@@ -82,7 +82,7 @@ const styles= StyleSheet.create({
         marginBottom:19,  
     },
     rows:{
-        marginTop:5
+        marginTop:25
     },
     align:{
         flexDirection:"row"

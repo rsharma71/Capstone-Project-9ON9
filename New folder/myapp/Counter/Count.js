@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useState } from "react";
 import {StyleSheet, View,Text, Image, TouchableOpacity} from "react-native";
 import { ScoreContext } from "../Context/ScoreContext";
-import { Feather } from '@expo/vector-icons';
+import { MaterialCommunityIcons,Feather } from '@expo/vector-icons';
 
 export default function Score() {
     const {
       score1,
-      score2, 
+      score2,
       resetScore
     } = useContext(ScoreContext);
     return (
@@ -17,12 +17,17 @@ export default function Score() {
             style ={{
                 resizeMode:"contain",
                 marginTop:30,
-                height:70,
-                width:150,
-                marginLeft:90,
+                height:75,
+                width:170,
+                marginLeft:79,
+           
             }}
+            
             />
+
+
     </View>
+
     <View style={styles.otherBtn}>
           <TouchableOpacity onPress={resetScore}>
             <View style={styles.resetButton}>
@@ -32,28 +37,39 @@ export default function Score() {
             </View>
           </TouchableOpacity>
         </View>
+
     <View flexDirection="row" justifyContent="space-around" >
     <TouchableOpacity>
     <View>
     <Image  source={require('../assets/OnGreen.png')}
             style ={{
                 resizeMode:"contain",
-                height:50,
-                width:100,
-                
+                resizeMode:"contain",
+                backgroundColor:"white",
+                justifyContent: "center",
+                alignContent:"center",
+                borderWidth: 2,
+                borderRadius:85/2,
+                borderColor:"#4EBF6B",
+                width: 75,
+                height:75
             }}
             /> 
             </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity >
  <View>
              <Image  source={require('../assets/OnBlue.png')}
             style ={{
                 resizeMode:"contain",
-                
-                height:50,
-                width:100,
-                
+                backgroundColor:"white",
+                justifyContent: "center",
+                alignContent:"center",
+                borderWidth: 2,
+                borderRadius:85/2,
+                borderColor:"#3D4675",
+                width: 75,
+                height:75
             }}
             /> 
             </View>
@@ -65,10 +81,10 @@ export default function Score() {
 
 <View style ={styles.points}>
     <View style= {styles.point1}>
-<Text style = {styles.pointtext}>{score1 >= 10 ? score1 : `0${score1}`}</Text>
+<Text style = {styles.pointtext}>{score1 >= 0 ? score1 : `${score1}`}</Text>
 </View>
 <View style= {styles.point2}>
-    <Text style = {styles.pointtext}>{score2 >= 10 ? score2 : `0${score2}`}</Text>
+    <Text style = {styles.pointtext}>{score2 >= 0 ? score2 : `${score2}`}</Text>
     </View>
 </View>
 
@@ -76,15 +92,16 @@ export default function Score() {
    );
 };
 const styles = StyleSheet.create({
+
     otherBtn: {
         marginHorizontal: 100,
-        marginTop:-10,
-        marginBottom:60
+        marginBottom:50,
+        marginTop:-10
       },
       resetButton: {
-        borderRadius: 8,
-        paddingVertical: 5,
-        paddingHorizontal: 12,
+        borderRadius: 10,
+        paddingVertical: 8,
+        paddingHorizontal: 10,
         backgroundColor: "#FF7C08",
       },
       buttonText: {
@@ -102,7 +119,8 @@ const styles = StyleSheet.create({
         padding:10,
         margin:15,
         flexDirection:"row",
-        justifyContent: "space-around"
+        justifyContent: "space-around",
+        marginBottom:-10
     },
    
    
